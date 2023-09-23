@@ -29,7 +29,7 @@ export class RoleGuard implements CanActivate {
 
     const user:any = await this.authSeervice.findUserByUserName(decode.userName)
    
-
+    request.user=user
     // Check if the user has at least one of the required roles
     const hasRequiredRole = user.roles.some((role) => authorization.roles.includes(role));
 
