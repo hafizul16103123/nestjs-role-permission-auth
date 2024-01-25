@@ -12,7 +12,7 @@ import { JwtService } from '@nestjs/jwt';
   providers: [AppService, AuthService, JwtService],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
+  configure(consumer: MiddlewareConsumer):void {
     consumer.apply(SetUserMiddleware).forRoutes('*');
   }
 }
