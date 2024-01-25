@@ -6,7 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { LocalStrategy } from './strategies/local-strategy';
 import { JwtStrategy } from './strategies/jwt-strategy';
 import { RefreshJwtStrategy } from './strategies/refreshToken.strategy';
-import config from 'src/config';
+import config from 'config';
 
 @Module({
   providers: [AuthService,LocalStrategy,JwtStrategy,RefreshJwtStrategy],
