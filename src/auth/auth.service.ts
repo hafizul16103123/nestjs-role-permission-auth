@@ -2,11 +2,9 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
-  UseGuards,
 } from '@nestjs/common';
 import { IUser, userStub } from './stubs/uset';
 import { JwtService } from '@nestjs/jwt';
-import { JwtGuard } from './guards/jwt-auth.guard';
 
 @Injectable()
 export class AuthService {

@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
 export class SetUserMiddleware implements NestMiddleware {
   constructor(private readonly authService: AuthService) {}
 
-  async use(req: Request, res: Response, next: NextFunction) {
+  async use(req: Request, res: Response, next: NextFunction):Promise<void> {
     console.log({ user: req.user });
     next();
   }
