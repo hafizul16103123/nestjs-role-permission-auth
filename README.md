@@ -1,4 +1,4 @@
-1. Toggle sidebar => ctrl + B
+<!-- 1. Toggle sidebar => ctrl + B
 2. Toggle terminal => ctrl + `
 3. Open User Settings => ctrl + ,
 4. Quick open file => ctrl + P
@@ -16,4 +16,4 @@
 
 // jwt authentication
 @nestjs/jwt, passport-jwt, @types/jwt
-@nestjs/passport, passport, passport-local
+@nestjs/passport, passport, passport-local -->

@@ -1,20 +1,16 @@
 import { PassportStrategy } from '@nestjs/passport';
-import { promises } from 'dns';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 
-export class RefreshJwtStrategy extends PassportStrategy(
-  Strategy,
-  'jwt-refresh',
-) {
-  constructor() {
-    super({
-      jwtFromRequest: ExtractJwt.fromBodyField('refresh'),
-      ignoreExpiration: false,
-      secretOrKey: `${process.env.jwt_secret}`,
-    });
-  }
+export class RefreshJwtStrategy extends PassportStrategy(Strategy, 'jwt-refresh') {
+    constructor() {
+        super({
+            jwtFromRequest: ExtractJwt.fromBodyField('refresh'),
+            ignoreExpiration: false,
+            secretOrKey: `${process.env.jwt_secret}`,
+        });
+    }
 
-  async validate(payload: any):Promise<any> {
-    return { user: payload.sub, username: payload.username };
-  }
+    async validate(payload: { sub: string; username: string }): Promise<{ user: string; username: string }> {
+        return { user: payload.sub, username: payload.username };
+    }
 }
